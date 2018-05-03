@@ -1,4 +1,7 @@
-const { writeFile } = require('@serverless/utils')
+/* eslint-disable-next-line */
+'use strict'
+
+const writeFile = require('@serverless/utils').writeFile
 const path = require('path')
 
 const trackingConfigFilePath = path.join(process.cwd(), 'tracking-config.json')

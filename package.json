@@ -15,15 +15,20 @@
     "components": "./bin/components"
   },
   "scripts": {
-    "cleanse": "node ./scripts/cleanse.js",
+    "build": "scripts/build",
+    "build:components": "node scripts/build-components.js",
+    "cleanse": "node scripts/cleanse.js",
     "components": "./bin/components",
+    "install:components": "node scripts/install-components.js",
+    "install:track": "node scripts/track-install.js",
     "lint": "eslint . --cache",
     "lint:staged": "lint-staged",
     "test": "jest .",
     "test:appveyor": "jest --testPathPattern=\"bin|examples|registry|src\" --colors --forceExit",
-    "docs": "node ./scripts/doc-gen.js",
-    "postinstall": "node ./scripts/postinstall.js",
-    "prepublishOnly": "node ./scripts/prepublish.js"
+    "docs": "node scripts/doc-gen.js",
+    "postinstall": "scripts/postinstall",
+    "prepublishOnly": "node scripts/prepublish.js",
+    "watch": "scripts/watch"
   },
   "dependencies": {
     "@octokit/rest": "^14.0.5",
@@ -32,6 +37,7 @@
     "archiver": "^2.1.1",
     "aws-sdk": "^2.214.1",
     "axios": "^0.17.1",
+    "babel-polyfill": "^6.26.0",
     "bluebird": "^3.5.1",
     "chalk": "^2.3.2",
     "concordance": "^3.0.0",
@@ -55,7 +61,11 @@
   },
   "devDependencies": {
     "adm-zip": "^0.4.9",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-jest": "^22.4.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.18.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",

@@ -1,5 +1,9 @@
+/* eslint-disable-next-line */
+'use strict'
+
 const fs = require('fs')
-const { join, resolve } = require('path')
+const join = require('path').join
+const resolve = require('path').resolve
 const cp = require('child_process')
 
 // get registry path
@@ -21,11 +25,15 @@ fs.readdirSync(registry).forEach((mod) => {
   }
 })
 
-const remove = cp.spawn('rm', [ '-rf', resolve(__dirname, '..', 'node_modules') ], { env: process.env })
+const remove = cp.spawn('rm', [ '-rf', resolve(__dirname, '..', 'node_modules') ], {
+  env: process.env
+})
 remove.stdout.on('data', (data) => {
   console.log(data.toString()) // eslint-disable-line no-console
 })
-const removeLock = cp.spawn('rm', [ resolve(__dirname, '..', 'package-lock.json') ], { env: process.env })
+const removeLock = cp.spawn('rm', [ resolve(__dirname, '..', 'package-lock.json') ], {
+  env: process.env
+})
 removeLock.stdout.on('data', (data) => {
   console.log(data.toString()) // eslint-disable-line no-console
 })

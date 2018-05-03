@@ -21,6 +21,22 @@ cd components
 npm install
 ```
 
+## Build
+
+To build the project
+
+```sh
+npm run build
+```
+
+## Watch
+
+To automatically re-build the project when files change
+
+```sh
+npm run watch
+```
+
 ## Cleanse
 
 To wipe out all installed modules as well as package-lock.json files, use the `cleanse` script.
