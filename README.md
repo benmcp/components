@@ -172,7 +172,7 @@ Also please do join the _Components_ channel on our public [Serverless-Contrib S
 
 ## Getting Started
 
-**Note:** Make sure you have Node.js 8+ and npm installed on your machine.
+**Note:** Make sure you have Node.js 8.6+ and npm installed on your machine.
 
 1. `npm install --global serverless-components`
 1. Setup the environment variables
